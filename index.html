@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f2eb">
+    <meta name="description" content="Explore the first CrossWear Christian T-shirt collection. 15,000 RWF each, with Kigali delivery available.">
+    <title>CrossWear — Wear your faith</title>
+    <script>try { if (localStorage.getItem("crosswear-theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch {}</script>
+    <link rel="icon" href="public/images/brand/logo-red.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#collection">Skip to the collection</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="CrossWear home">
+        <img src="public/images/brand/logo-red.png" alt="CrossWear">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#collection">Shop</a>
+        <a href="#size-guide">Sizing</a>
+        <a href="#about">Our message</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.3A8.6 8.6 0 0 1 8.7 3.8 8.8 8.8 0 1 0 20.2 15.3Z"></path></svg>
+        <span>Dark</span>
+      </button>
+      <button class="bag-button" id="open-bag" type="button" aria-haspopup="dialog" aria-controls="bag-dialog">
+        <span>My bag</span><span class="bag-count" id="bag-count" aria-label="0 items">0</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-mark"></span> CHRISTIAN APPAREL · RWANDA</p>
+          <h1 id="hero-title">Wear the message.<br><span>Live the faith.</span></h1>
+          <p class="hero-intro">A first collection of faith-led T-shirts made to carry the words that matter with you.</p>
+          <a class="button button-dark" href="#collection">Explore the collection <span aria-hidden="true">↘</span></a>
+          <p class="hero-note">Every design <span>·</span> 15,000 RWF <span>·</span> Kigali delivery available</p>
+        </div>
+        <div class="hero-art" aria-label="Jesus, the Way, the Truth and the Life T-shirt mockup">
+          <div class="hero-stamp">THE<br>FIRST<br>DROP</div>
+          <img src="public/images/products/black/jesus-both.png" alt="Black CrossWear T-shirt shown from the front and back">
+          <p>TRUTH · HOPE · EVERYDAY</p>
+        </div>
+        <div class="hero-bottom-line" aria-hidden="true"></div>
+      </section>
+
+      <section class="collection section-wrap" id="collection" aria-labelledby="collection-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE CROSSWEAR COLLECTION</p>
+            <h2 id="collection-title">Find the words<br><em>you want to wear.</em></h2>
+          </div>
+          <p class="section-aside">Choose a design and color, select a size, then send your order through WhatsApp.</p>
+        </div>
+
+        <div class="catalog-controls">
+          <div class="filter-list" role="group" aria-label="Filter designs">
+            <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All designs <span>13</span></button>
+            <button class="filter-chip" type="button" data-filter="Scripture" aria-pressed="false">Scripture</button>
+            <button class="filter-chip" type="button" data-filter="Faith" aria-pressed="false">Faith</button>
+            <button class="filter-chip" type="button" data-filter="Identity" aria-pressed="false">Identity</button>
+          </div>
+          <label class="search-box">
+            <span class="sr-only">Search designs</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+            <input id="product-search" type="search" placeholder="Search designs" autocomplete="off">
+          </label>
+        </div>
+
+        <p class="results-label" id="results-label" aria-live="polite">13 designs</p>
+        <div class="product-grid" id="product-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <p class="eyebrow">NO MATCHES</p>
+          <h3>Try another search.</h3>
+          <button class="text-button" id="clear-search" type="button">Show all designs <span aria-hidden="true">→</span></button>
+        </div>
+      </section>
+
+      <section class="promise-band" id="about" aria-labelledby="about-title">
+        <div class="promise-mark">✝</div>
+        <div>
+          <p class="eyebrow">THE HEART BEHIND CROSSWEAR</p>
+          <h2 id="about-title">Faith belongs<br>in everyday life.</h2>
+        </div>
+        <p class="promise-copy">CrossWear brings Christian messages into the everyday things we wear. Pick a design that speaks to you, then make it part of your story.</p>
+      </section>
+
+      <section class="size-guide" id="size-guide" aria-labelledby="size-guide-title">
+        <div class="size-guide-copy">
+          <p class="eyebrow">SIZE GUIDE</p>
+          <h2 id="size-guide-title">Find your fit.</h2>
+          <p>Available sizes are M, L, XL, 2XL and 3XL. Exact garment measurements can be added later. Ask us on WhatsApp if you’d like help choosing.</p>
+          <a class="size-question-link button button-dark" href="#" target="_blank" rel="noopener noreferrer">Ask about sizing <span aria-hidden="true">↗</span></a>
+        </div>
+        <ul class="size-list" aria-label="Available T-shirt sizes">
+          <li>M</li><li>L</li><li>XL</li><li>2XL</li><li>3XL</li>
+        </ul>
+      </section>
+
+      <section class="details-row" aria-label="Shopping information">
+        <article><span class="detail-number">01</span><h3>One clear price</h3><p>15,000 RWF per T-shirt.</p></article>
+        <article><span class="detail-number">02</span><h3>Sizes for your fit</h3><p>M, L, XL, 2XL and 3XL.</p></article>
+        <article><span class="detail-number">03</span><h3>Kigali delivery</h3><p>Delivery has an additional fee, shared before ordering.</p></article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="#top"><img src="public/images/brand/logo-red.png" alt="CrossWear"></a>
+      <p>Wear the message. Live the faith.</p>
+      <span>© <span id="year"></span> CrossWear · Rwanda</span>
+    </footer>
+
+    <dialog class="product-dialog" id="product-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Close product details">×</button>
+      <div class="dialog-layout" id="dialog-content"></div>
+    </dialog>
+
+    <dialog class="bag-dialog" id="bag-dialog" aria-labelledby="bag-title">
+      <div class="bag-head"><div><p class="eyebrow">YOUR SELECTION</p><h2 id="bag-title">My bag <span id="bag-title-count"></span></h2></div><button class="dialog-close" type="button" data-close-dialog aria-label="Close bag">×</button></div>
+      <div class="bag-items" id="bag-items"></div>
+      <div class="bag-empty" id="bag-empty"><p>Your bag is waiting for a design.</p><button class="text-button" type="button" data-close-dialog>Browse the collection <span aria-hidden="true">→</span></button></div>
+      <div class="bag-summary" id="bag-summary" hidden>
+        <div class="subtotal-row"><span>Subtotal</span><strong id="bag-subtotal">0 RWF</strong></div>
+        <p>Kigali delivery costs extra. We’ll confirm the fee with you before ordering.</p>
+        <button class="button button-dark checkout-button" id="checkout-button" type="button">Continue in WhatsApp</button>
+      </div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
