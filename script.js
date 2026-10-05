@@ -9,7 +9,7 @@ const COLOR_HEX = {
   "Tiffany Blue": "#67d2cc", Maroon: "#712331", Sand: "#ddc7a1", "Forest Green": "#0d493b"
 };
 
-const PRODUCTS = [
+let PRODUCTS = [
   {
     id: "jesus-way-truth-life",
     title: "Jesus — The Way, the Truth & the Life",
@@ -210,6 +210,7 @@ const whatsAppLink = (message) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encod
 function renderProducts() {
   const term = search.value.trim().toLowerCase();
   const visible = PRODUCTS.filter((product) => {
+    if (product.active === false) return false;
     const matchesFilter = activeFilter === "all" || product.category === activeFilter;
     const searchable = `${product.title} ${product.reference} ${product.category} ${product.description}`.toLowerCase();
     return matchesFilter && (!term || searchable.includes(term));
@@ -427,3 +428,18 @@ document.querySelectorAll(".size-question-link").forEach((link) => {
 });
 renderProducts();
 updateBagCount();
+
+async function loadPublishedCatalog() {
+  try {
+    const response = await fetch("/.netlify/functions/catalog", { cache: "no-store" });
+    if (!response.ok) return;
+    const catalog = await response.json();
+    if (!Array.isArray(catalog.products)) return;
+    PRODUCTS.splice(0, PRODUCTS.length, ...catalog.products);
+    renderProducts();
+  } catch {
+    // Local previews keep using the catalog bundled with this page.
+  }
+}
+
+loadPublishedCatalog();

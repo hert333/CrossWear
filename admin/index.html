@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f2eb">
+    <title>Store admin — CrossWear</title>
+    <link rel="icon" href="../public/images/brand/logo-red.png" type="image/png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="admin.js" defer></script>
+  </head>
+  <body class="admin-page">
+    <header class="site-header admin-header">
+      <a class="brand" href="../index.html" aria-label="CrossWear shop">
+        <img src="../public/images/brand/logo-red.png" alt="CrossWear">
+      </a>
+      <a class="admin-back-link" href="../index.html">View shop <span aria-hidden="true">↗</span></a>
+    </header>
+    <main class="admin-shell">
+      <section class="admin-intro">
+        <p class="eyebrow">CROSSWEAR STORE</p>
+        <h1>Designs, made simple.</h1>
+        <p>Add a shirt, update its photo, or hide a design from the shop. Changes appear on the live store after you save.</p>
+      </section>
+
+      <section class="admin-login-card" id="login-card">
+        <div class="admin-lock-mark" aria-hidden="true">✝</div>
+        <h2>Sign in to manage the shop</h2>
+        <p id="login-message">Use the private admin invitation for your Netlify site.</p>
+        <button class="button button-dark" id="login-button" type="button">Sign in <span aria-hidden="true">↗</span></button>
+      </section>
+
+      <section class="admin-dashboard" id="admin-dashboard" hidden>
+        <div class="admin-toolbar">
+          <div><p class="eyebrow">YOUR CATALOG</p><h2>Manage designs</h2></div>
+          <button class="button button-dark" id="new-product-button" type="button">Add a design <span aria-hidden="true">＋</span></button>
+        </div>
+        <p class="admin-status" id="admin-status" role="status" aria-live="polite"></p>
+
+        <div class="admin-layout">
+          <section class="admin-list-panel" aria-labelledby="admin-list-title">
+            <h3 id="admin-list-title">Your designs</h3>
+            <div class="admin-product-list" id="admin-product-list"></div>
+          </section>
+
+          <section class="admin-editor-panel" aria-labelledby="editor-title">
+            <div class="editor-heading"><p class="eyebrow">DESIGN DETAILS</p><h3 id="editor-title">Add a T-shirt</h3></div>
+            <form id="product-form">
+              <input type="hidden" name="productId">
+              <label>Design name<input name="title" maxlength="100" required placeholder="For example: Jesus Is King"></label>
+              <div class="form-two-columns">
+                <label>Bible verse or message<input name="reference" maxlength="100" placeholder="For example: John 14:6"></label>
+                <label>Collection type<input name="category" maxlength="40" value="Faith" required placeholder="Faith, Scripture, Identity"></label>
+              </div>
+              <label>Short description<textarea name="description" maxlength="500" rows="3" required placeholder="A short description customers will see."></textarea></label>
+              <label>Available colors<input name="colors" required placeholder="Black, White, Beige"></label>
+              <p class="field-help">Write the color names separated by commas. New colors can be added to this design as photos are ready.</p>
+              <label class="file-field">Main T-shirt photo<input name="photo" type="file" accept="image/png,image/jpeg,image/webp"><span class="field-help">PNG, JPG, or WebP; up to 8 MB. A photo is required for a new design.</span></label>
+              <div class="current-photo" id="current-photo" hidden><img id="current-photo-image" alt="Current design photo"><span>Current main photo</span></div>
+              <label class="select-field">Photo shape<select name="layout"><option value="contain">Show the full mockup</option><option value="cover">Fill the photo area</option></select></label>
+              <label class="check-field"><input name="isNew" type="checkbox"> Mark as a new design</label>
+              <label class="check-field"><input name="artworkPending" type="checkbox"> Hide order button until artwork is ready</label>
+              <label class="check-field"><input name="active" type="checkbox" checked> Show this design in the shop</label>
+              <div class="admin-price-note"><strong>Current shop settings</strong><span>15,000 RWF per shirt · Sizes M, L, XL, 2XL and 3XL</span><small>These settings apply to every design. We can make them editable here later.</small></div>
+              <div class="editor-actions"><button class="button button-dark" type="submit" id="save-product-button">Save design</button><button class="button button-light" type="button" id="cancel-edit-button">Clear form</button></div>
+            </form>
+          </section>
+        </div>
+        <button class="admin-signout" id="signout-button" type="button">Sign out</button>
+      </section>
+    </main>
+    <footer class="site-footer admin-footer"><p>CrossWear · Private shop admin</p><span>Only invited store admins can save changes.</span></footer>
+  </body>
+</html>
